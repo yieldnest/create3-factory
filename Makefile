@@ -47,3 +47,9 @@ deploy:
 	@if [ -z "${deployerAccountName}" ]; then echo "Error: deployerAccountName is required"; exit 1; fi
 	@if [ -z "${deployerAddress}" ]; then echo "Error: deployerAddress is required"; exit 1; fi
 	forge script Deploy --rpc-url ${network} --account ${deployerAccountName} --sender ${deployerAddress} --broadcast --verify
+
+# Deploy to all chains
+.PHONY: deploy-all
+deploy-all:
+	@echo "Deploying to all chains..."
+	@./script/deployAllChains.sh

@@ -28,8 +28,53 @@ contract Deploy is Script {
 
     function getDeploymentFile() internal view virtual returns (string memory) {
         string memory root = vm.projectRoot();
-        string memory network = vm.envString("NETWORK");
-        return string.concat(root, "/deployments/", network, "-", vm.toString(block.chainid), ".json");
+        return string.concat(root, "/deployments/", getChainName(), "-deployment.json");
+    }
+
+    function getChainName() internal view virtual returns (string memory) {
+        if (block.chainid == 1) {
+            return "mainnet";
+        } else if (block.chainid == 8453) {
+            return "base";
+        } else if (block.chainid == 10) {
+            return "optimism";
+        } else if (block.chainid == 42161) {
+            return "arbitrum";
+        } else if (block.chainid == 252) {
+            return "fraxtal";
+        } else if (block.chainid == 169) {
+            return "manta";
+        } else if (block.chainid == 534352) {
+            return "scroll";
+        } else if (block.chainid == 250) {
+            return "fantom";
+        } else if (block.chainid == 5000) {
+            return "mantle";
+        } else if (block.chainid == 81457) {
+            return "blast";
+        } else if (block.chainid == 59144) {
+            return "linea";
+        } else if (block.chainid == 80094) {
+            return "bera";
+        } else if (block.chainid == 56) {
+            return "binance";
+        } else if (block.chainid == 43111) {
+            return "hemi";
+        } else if (block.chainid == 17000) {
+            return "holesky";
+        } else if (block.chainid == 11155111) {
+            return "sepolia";
+        } else if (block.chainid == 2522) {
+            return "fraxtal_testnet";
+        } else if (block.chainid == 2810) {
+            return "morph_testnet";
+        } else if (block.chainid == 743111) {
+            return "hemi_testnet";
+        } else if (block.chainid == 97) {
+            return "binance_testnet";
+        } else {
+            revert("Unsupported chain");
+        }
     }
 
     function saveDeployment() internal {
