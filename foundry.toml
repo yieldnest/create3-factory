@@ -56,7 +56,7 @@ blast = { key = "${BLASTSCAN_API_KEY}", url = "https://api.blastscan.io/api/" }
 linea = { key = "${LINEASCAN_API_KEY}", url = "https://api.lineascan.build/api/" }
 bera = { key = "${BERASCAN_API_KEY}", url = "https://api.berascan.com/api/" }
 bsc = { key = "${BSCSCAN_API_KEY}", url = "https://api.bscscan.com/api/" }
-avalanche = {key = "${SNOWTRACE_API_KEY}", url = "https://api.snowtrace.io/api"}
-gnosis = {key = "${GNOSISSCAN_API_KEY}", url = "https://api.gnosisscan.io/api"}
-polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api"}
-unichain = {key = "${UNISCAN_API_KEY}", url = "https://api.uniscan.xyz/api"}
+avalanche = {key = "${SNOWTRACE_API_KEY}", url = "https://api.snowtrace.io/api" }
+gnosis = {key = "${GNOSISSCAN_API_KEY}", url = "https://api.gnosisscan.io/api" }
+polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
+unichain = {key = "${UNISCAN_API_KEY}", url = "https://api.uniscan.xyz/api" }
