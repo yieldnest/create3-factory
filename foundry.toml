@@ -1,38 +1,62 @@
 [profile.default]
+solc = "0.8.29"
+evm_version = "cancun"
+bytecode_hash = "none"
+cbor_metadata = false
+optimizer = true
 optimizer_runs = 1000000
+fs_permissions = [
+  { access = "write", path = "./deployments" },
+]
 
 [rpc_endpoints]
-arbitrum = "${RPC_URL_ARBITRUM}"
-arbitrum_goerli = "${RPC_URL_ARBITRUM_GOERLI}"
-avalanche = "${RPC_URL_AVALANCHE}"
-base = "${RPC_URL_BASE}"
-base_sepolia = "${RPC_URL_BASE_SEPOLIA}"
-blast = "${RPC_URL_BLAST}"
-bsc = "${RPC_URL_BSC}"
-fantom = "${RPC_URL_FANTOM}"
-gnosis = "${RPC_URL_GNOSIS}"
-goerli = "${RPC_URL_GOERLI}"
-holesky = "${RPC_URL_HOLESKY}"
-mainnet = "${RPC_URL_MAINNET}"
-optimism = "${RPC_URL_OPTIMISM}"
-polygon = "${RPC_URL_POLYGON}"
-sanko = "${RPC_URL_SANKO}"
-sepolia = "${RPC_URL_SEPOLIA}"
+mainnet = "${MAINNET_RPC_URL}"
+holesky = "${HOLESKY_RPC_URL}"
+sepolia = "${SEPOLIA_RPC_URL}"
+arbitrum = "${ARBITRUM_RPC_URL}"
+optimism = "${OPTIMISM_RPC_URL}"
+base = "${BASE_RPC_URL}"
+fraxtal = "${FRAX_RPC_URL}"
+manta = "${MANTA_RPC_URL}"
+taiko = "${TAIKO_RPC_URL}"
+scroll = "${SCROLL_RPC_URL}"
+fantom = "${FANTOM_RPC_URL}"
+mantle = "${MANTLE_RPC_URL}"
+blast = "${BLAST_RPC_URL}"
+linea = "${LINEA_RPC_URL}"
+bera = "${BERA_RPC_URL}"
+bsc = "${BSC_RPC_URL}"
+hemi = "${HEMI_RPC_URL}"
+ink = "${INK_RPC_URL}"
+fraxtal_testnet = "${FRAX_TESTNET_RPC_URL}"
+morph_testnet = "${MORPH_TESTNET_RPC_URL}"
+bsc_testnet = "${BSC_TESTNET_RPC_URL}"
+hemi_testnet = "${HEMI_TESTNET_RPC_URL}"
+avalanche = "${AVALANCHE_RPC_URL}"
+gnosis = "${GNOSIS_RPC_URL}"
+polygon = "${POLYGON_RPC_URL}"
+sanko = "${SANKO_RPC_URL}"
 unichain = "${RPC_URL_UNICHAIN}"
 
 [etherscan]
-arbitrum = {key = "${ARBISCAN_KEY}", url = "https://api.arbiscan.io/api"}
-arbitrum_goerli = {key = "${ARBISCAN_KEY}", url = "https://api-goerli.arbiscan.io/api"}
-avalanche = {key = "${SNOWTRACE_KEY}", url = "https://api.snowtrace.io/api"}
-base = {key = "${BASESCAN_KEY}", url = "https://api.basescan.org/api"}
-blast = {key = "${BLASTSCAN_KEY}", url = "https://api.blastscan.io/api"}
-bsc = {key = "${BSCSCAN_KEY}", url = "https://api.bscscan.com/api"}
-fantom = {key = "${FTMSCAN_KEY}", url = "https://api.ftmscan.com/api"}
-gnosis = {key = "${GNOSISSCAN_KEY}", url = "https://api.gnosisscan.io/api"}
-goerli = {key = "${ETHERSCAN_KEY}", url = "https://api-goerli.etherscan.io/api"}
-holesky = {key = "${ETHERSCAN_KEY}", url = "https://api-holesky.etherscan.io/api"}
-mainnet = {key = "${ETHERSCAN_KEY}"}
-optimism = {key = "${OPTIMISM_ETHERSCAN_KEY}", url = "https://api-optimistic.etherscan.io/api"}
-polygon = {key = "${POLYGONSCAN_KEY}", url = "https://api.polygonscan.com/api"}
-sepolia = {key = "${ETHERSCAN_KEY}", url = "https://api-sepolia.etherscan.io/api"}
-unichain = {key = "${UNISCAN_KEY}", url = "https://api.uniscan.xyz/api"}
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+holesky = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
+arbitrum = { key = "${ARBISCAN_API_KEY}", url = "https://api.arbiscan.io/api/" }
+optimism = { key = "${OPTIMISTIC_ETHERSCAN_API_KEY}", url = "https://api-optimistic.etherscan.io/api" }
+base = { key = "${BASESCAN_API_KEY}", url = "https://api.basescan.org/api/" }
+fraxtal = { key = "${FRAXSCAN_API_KEY}", url = "https://api.fraxscan.com/api/" }
+fraxtal_testnet = { key = "${FRAXSCAN_API_KEY}", url = "https://api-holesky.fraxscan.com/api/" }
+morph_testnet = { key = "${MORPHSCAN_API_KEY}", url = "https://explorer-api-holesky.morphl2.io/api/" }
+scroll = { key = "${SCROLLSCAN_API_KEY}", url = "https://api.scrollscan.com/api/" }
+fantom = { key = "${FANTOMSCAN_API_KEY}", url = "https://api.ftmscan.com/api/" }
+taiko = { key = "${TAIKOSCAN_API_KEY}", url = "https://api.taikoscan.io/api/" }
+mantle = { key = "${MANTLESCAN_API_KEY}", url = "https://api.mantlescan.xyz/api/" }
+blast = { key = "${BLASTSCAN_API_KEY}", url = "https://api.blastscan.io/api/" }
+linea = { key = "${LINEASCAN_API_KEY}", url = "https://api.lineascan.build/api/" }
+bera = { key = "${BERASCAN_API_KEY}", url = "https://api.berascan.com/api/" }
+bsc = { key = "${BSCSCAN_API_KEY}", url = "https://api.bscscan.com/api/" }
+avalanche = {key = "${SNOWTRACE_API_KEY}", url = "https://api.snowtrace.io/api" }
+gnosis = {key = "${GNOSISSCAN_API_KEY}", url = "https://api.gnosisscan.io/api" }
+polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
+unichain = {key = "${UNISCAN_API_KEY}", url = "https://api.uniscan.xyz/api" }
