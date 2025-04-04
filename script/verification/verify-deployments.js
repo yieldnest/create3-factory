@@ -16,6 +16,19 @@ async function getBytecode(rpc, address) {
     return execSync(cmd).toString().trim();
 }
 
+// Helper to get bytecode from compiled contract JSON
+function getCompiledBytecode() {
+    try {
+        const contractPath = path.join(__dirname, '../../out/CREATE3Factory.sol/CREATE3Factory.json');
+        const contractJson = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
+        return contractJson.deployedBytecode.object;
+    } catch (error) {
+        console.error('Error reading compiled contract bytecode:', error);
+        return null;
+    }
+}
+
+
 // Get RPC URL for a specific chain
 function getRpcUrl(chainId) {
     const chainMapping = {
@@ -71,12 +84,16 @@ async function main() {
             
             console.log(`Verifying CREATE3Factory at ${CREATE3Factory} on chain ${chainid}...`);
             const bytecode = await getBytecode(rpcUrl, CREATE3Factory);
+            const compiledBytecode = await getCompiledBytecode();
             
             if (bytecode === '0x' || bytecode === '') {
                 console.error(`❌ Contract not found at ${CREATE3Factory} on chain ${chainid}`);
+            } else if (bytecode !== compiledBytecode) {
+                console.error(`❌ Bytecode mismatch for ${CREATE3Factory} on chain ${chainid}`);
+                console.log(`Compiled bytecode: ${compiledBytecode.toString()}...`);
+                console.log(`Deployed bytecode: ${bytecode.substring(0, 100)}...`);
             } else {
                 console.log(`✅ Contract verified at ${CREATE3Factory} on chain ${chainid}`);
-                // You could add additional verification logic here if needed
             }
         } catch (error) {
             console.error(`Error verifying deployment in ${file}:`, error);
