@@ -60,3 +60,4 @@ avalanche = {key = "${SNOWTRACE_API_KEY}", url = "https://api.snowtrace.io/api" 
 gnosis = {key = "${GNOSISSCAN_API_KEY}", url = "https://api.gnosisscan.io/api" }
 polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
 unichain = {key = "${UNISCAN_API_KEY}", url = "https://api.uniscan.xyz/api" }
+nibiru = { key = "${NIBIRU_API_KEY}", url = "https://api.nibiscan.io/api/" }
