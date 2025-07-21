@@ -36,6 +36,7 @@ avalanche = "${AVALANCHE_RPC_URL}"
 gnosis = "${GNOSIS_RPC_URL}"
 polygon = "${POLYGON_RPC_URL}"
 sanko = "${SANKO_RPC_URL}"
+nibiru = "${NIBIRU_RPC_URL}"
 unichain = "${RPC_URL_UNICHAIN}"
 
 [etherscan]
@@ -60,4 +61,4 @@ avalanche = {key = "${SNOWTRACE_API_KEY}", url = "https://api.snowtrace.io/api" 
 gnosis = {key = "${GNOSISSCAN_API_KEY}", url = "https://api.gnosisscan.io/api" }
 polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
 unichain = {key = "${UNISCAN_API_KEY}", url = "https://api.uniscan.xyz/api" }
-nibiru = { key = "${NIBIRU_API_KEY}", url = "https://api.nibiscan.io/api/" }
+nibiru = { key = "${NIBIRU_API_KEY}", url = "https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api", chain = 6900 }
